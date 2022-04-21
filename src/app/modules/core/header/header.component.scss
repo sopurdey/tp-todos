@@ -1,0 +1,29 @@
+h1 {
+  color: #fff;
+  background-color: rgb(49, 131, 110);
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+nav {
+  padding: 10px 5px;
+  text-transform: uppercase;
+  background-color: rgb(49, 131, 110, 0.15);
+  margin-bottom: 20px;
+}
+
+nav > div:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.active {
+  color: rgb(49, 85, 131);
+  font-weight: 700;
+}
+
+.sub-active {
+  color: rgb(49, 131, 110);
+  font-weight: 700;
+}
