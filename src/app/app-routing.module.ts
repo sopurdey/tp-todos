@@ -3,13 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './modules/pages/home/components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './modules/pages/users/components/user-list/user-list.component';
+import { TodoItemComponent } from './modules/pages/todos/components/todo-item/todo-item.component';
 
 const ROUTES: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
   {
     path: 'home',
     component: HomeComponent,
@@ -17,6 +13,11 @@ const ROUTES: Routes = [
   {
     path: 'users',
     component: UserListComponent,
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
   {
     path: '**',

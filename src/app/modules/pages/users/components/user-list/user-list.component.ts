@@ -20,8 +20,19 @@ export class UserListComponent implements OnInit {
   getUsers() {
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
-      console.log(this.users);
     })
+  }
+
+  addTodo(u: User) {
+    console.log(u.todos);
+  }
+
+  clickEdit(id: number) {
+    console.log(id);
+  }
+
+  clickUser(user: User) {
+    console.log(user.todos);
   }
 
   getUserById(id: number) {

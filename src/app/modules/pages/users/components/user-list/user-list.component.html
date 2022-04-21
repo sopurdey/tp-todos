@@ -10,16 +10,52 @@
     </tr>
   </thead>
   <tbody *ngFor="let user of users" class="users">
-    <tr>
+    <tr class="accordion" data-toggle="collapse" [attr.data-target]="'tr-' + user.id">
       <td>{{ user.id }}</td>
-      <td>{{ user.firstname }}</td>
-      <td>{{ user.lastname }}</td>
+      <td (click)="clickUser(user)" class="user-name">{{ user.firstname }}</td>
+      <td (click)="clickUser(user)" class="user-name">{{ user.lastname }}</td>
       <td>{{ user.email }}</td>
       <td>
-          <button class="btn text-success"><i class="bi bi-pencil"></i></button>
-          <button class="btn text-danger" (click)="deleteUser(user.id)"><i class="bi bi-x-lg"></i></button>
-          <button class="btn text-warning"><i class="bi bi-star"></i></button>
-        </td>
+        <button (click)="clickEdit(user.id)" class="btn text-info">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button (click)="deleteUser(user.id)" class="btn text-danger">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <button (click)="addTodo(user)" class="btn text-success">
+          <i class="bi bi-plus-square"></i>
+        </button>
+        <button (click)="clickUser(user)" class="btn text-warning">
+          <i class="bi bi-arrow-right-square"></i>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td class="hiddenRow" colspan="5">
+        <div
+          class="accordion-body collapsed accordion"
+          [id]="'tr-' + user.id"
+          *ngIf="user.todos"
+        >
+          <div class="todolists d-grid" *ngIf="user.todos?.length">
+            <h3 class="text-danger">À faire</h3>
+            <div class="todos" *ngFor="let todo of user.todos">
+              <div *ngIf="!todo.isDone">
+                <strong>{{ todo.text }}</strong>
+                <p class="todo-cat">{{ todo.category }}</p>
+              </div>
+            </div>
+            <h3 class="text-success">Fait</h3>
+            <div class="done" *ngFor="let todo of user.todos">
+              <div *ngIf="todo.isDone">
+                <strong>{{ todo.text }}</strong>
+                <p class="todo-cat">{{ todo.category }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .accordion-body -->
+      </td>
     </tr>
   </tbody>
 </table>
