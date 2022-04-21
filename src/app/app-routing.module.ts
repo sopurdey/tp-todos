@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './modules/pages/home/components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
+import { UserListComponent } from './modules/pages/users/components/user-list/user-list.component';
 
 const ROUTES: Routes = [
   {
@@ -12,6 +13,10 @@ const ROUTES: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'users',
+    component: UserListComponent,
   },
   {
     path: '**',

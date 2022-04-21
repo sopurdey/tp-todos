@@ -3,3 +3,8 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
 }
+
+#content {
+  width: 80%;
+  margin: 0 auto;
+}

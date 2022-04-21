@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Guerrero",
+      "lastname": "Rivera",
+      "email": "guerrerorivera@email.com"
+    },
+    {
+      "id": 2,
+      "firstname": "Freeman",
+      "lastname": "Mccullough",
+      "email": "freemanmccullough@email.com"
+    },
+    {
+      "id": 3,
+      "firstname": "Weaver",
+      "lastname": "Olsen",
+      "email": "weaverolsen@email.com"
+    },
+    {
+      "id": 4,
+      "firstname": "Petty",
+      "lastname": "Gilliam",
+      "email": "pettygilliam@email.com"
+    },
+    {
+      "id": 5,
+      "firstname": "Odessa",
+      "lastname": "Adams",
+      "email": "odessaadams@email.com"
+    },
+    {
+      "id": 6,
+      "firstname": "Johnston",
+      "lastname": "Bush",
+      "email": "johnstonbush@email.com"
+    },
+    {
+      "id": 7,
+      "firstname": "Sharon",
+      "lastname": "Clemons",
+      "email": "sharonclemons@email.com"
+    },
+    {
+      "id": 8,
+      "firstname": "Myers",
+      "lastname": "Mcneil",
+      "email": "myersmcneil@email.com"
+    },
+    {
+      "id": 9,
+      "firstname": "Jasmine",
+      "lastname": "Hobbs",
+      "email": "jasminehobbs@email.com"
+    },
+    {
+      "id": 10,
+      "firstname": "Lucy",
+      "lastname": "Morris",
+      "email": "lucymorris@freakin.com"
+    }
+  ]
+}
