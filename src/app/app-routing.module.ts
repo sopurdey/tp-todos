@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './modules/pages/home/components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { UserListComponent } from './modules/pages/users/components/user-list/user-list.component';
-import { TodoItemComponent } from './modules/pages/todos/components/todo-item/todo-item.component';
+import { UserComponent } from './modules/pages/users/components/user/user.component';
 
 const ROUTES: Routes = [
   {
@@ -12,7 +11,7 @@ const ROUTES: Routes = [
   },
   {
     path: 'users',
-    component: UserListComponent,
+    component: UserComponent,
   },
   {
     path: '',

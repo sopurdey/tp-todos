@@ -6,11 +6,15 @@ h1 {
   margin: 0;
 }
 
-nav {
-  padding: 10px 5px;
-  text-transform: uppercase;
+.container-fluid {
+  padding: 10px 0;
   background-color: rgb(49, 131, 110, 0.15);
-  margin-bottom: 20px;
+}
+
+nav {
+  text-transform: uppercase;
+  width: 80%;
+  margin: 0 auto;
 }
 
 nav > div:hover {
@@ -19,7 +23,7 @@ nav > div:hover {
 }
 
 div.active {
-  color:rgb(49, 131, 110);
+  color: rgb(49, 131, 110);
   font-weight: 700;
 }
 

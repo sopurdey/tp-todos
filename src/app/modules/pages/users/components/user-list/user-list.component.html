@@ -1,5 +1,4 @@
-<h2>Liste des utilisateurs</h2>
-<table class="table table-dark table-striped table-hobertext-center">
+<table class="table table-dark table-striped table-hover text-center">
   <thead>
     <tr>
       <th>ID</th>
@@ -10,20 +9,25 @@
     </tr>
   </thead>
   <tbody *ngFor="let user of users" class="users">
-    <tr class="accordion" data-toggle="collapse" [attr.data-target]="'tr-' + user.id">
+    <tr
+      data-toggle="collapse"
+      class="accordion-toggle collapsed"
+      aria-expanded="false"
+      [attr.data-target]="'#tr-' + user.id"
+    >
       <td>{{ user.id }}</td>
-      <td (click)="clickUser(user)" class="user-name">{{ user.firstname }}</td>
-      <td (click)="clickUser(user)" class="user-name">{{ user.lastname }}</td>
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.lastname }}</td>
       <td>{{ user.email }}</td>
       <td>
         <button (click)="clickEdit(user.id)" class="btn text-info">
           <i class="bi bi-pencil"></i>
         </button>
+        <button class="btn text-success">
+          <i class="bi bi-plus-square"></i>
+        </button>
         <button (click)="deleteUser(user.id)" class="btn text-danger">
           <i class="bi bi-x-lg"></i>
-        </button>
-        <button (click)="addTodo(user)" class="btn text-success">
-          <i class="bi bi-plus-square"></i>
         </button>
         <button (click)="clickUser(user)" class="btn text-warning">
           <i class="bi bi-arrow-right-square"></i>
@@ -33,24 +37,33 @@
     <tr>
       <td class="hiddenRow" colspan="5">
         <div
-          class="accordion-body collapsed accordion"
+          class="accordion-body collapse"
           [id]="'tr-' + user.id"
+          aria-expanded="false"
           *ngIf="user.todos"
         >
-          <div class="todolists d-grid" *ngIf="user.todos?.length">
-            <h3 class="text-danger">À faire</h3>
-            <div class="todos" *ngFor="let todo of user.todos">
-              <div *ngIf="!todo.isDone">
-                <strong>{{ todo.text }}</strong>
-                <p class="todo-cat">{{ todo.category }}</p>
+          <div class="todolists" *ngIf="user.todos?.length">
+            <div>
+              <p class="text-danger h4 d-inline-block">
+                À faire
+                <button (click)="addTodo(user)" class="btn text-success d-inline-block">
+                  <i class="bi bi-plus-square"></i>
+                </button>
+              </p>
+              <div class="todos" *ngFor="let todo of user.todos">
+                <div *ngIf="!todo.isDone">
+                  <app-todo-item [todo]="todo"></app-todo-item>
+                </div>
               </div>
             </div>
-            <h3 class="text-success">Fait</h3>
-            <div class="done" *ngFor="let todo of user.todos">
-              <div *ngIf="todo.isDone">
-                <strong>{{ todo.text }}</strong>
-                <p class="todo-cat">{{ todo.category }}</p>
+            <div>
+              <p class="text-success h4">Fait</p>
+              <div class="done" *ngFor="let todo of user.todos">
+                <div *ngIf="todo.isDone">
+                  <app-todo-item [todo]="todo"></app-todo-item>
+                </div>
               </div>
+              <!-- .done -->
             </div>
           </div>
         </div>

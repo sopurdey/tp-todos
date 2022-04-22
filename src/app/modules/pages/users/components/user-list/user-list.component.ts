@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Todo } from 'src/app/modules/shared/models/todo';
 import { User } from 'src/app/modules/shared/models/user';
 import { UserService } from 'src/app/modules/shared/services/user.service';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrls: ['./user-list.component.scss'],
 })
 export class UserListComponent implements OnInit {
   users!: User[];
   user!: User;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -20,7 +21,7 @@ export class UserListComponent implements OnInit {
   getUsers() {
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
-    })
+    });
   }
 
   addTodo(u: User) {
@@ -32,7 +33,10 @@ export class UserListComponent implements OnInit {
   }
 
   clickUser(user: User) {
-    console.log(user.todos);
+    if (user.todos.length) {
+      console.log(user.todos);
+      document.getElementById('tr-' + user.id)?.classList.toggle('show');
+    }
   }
 
   getUserById(id: number) {

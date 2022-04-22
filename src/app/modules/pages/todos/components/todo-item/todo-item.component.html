@@ -1,5 +1,12 @@
 <div class="todo">
-    <p>Todo Text</p>
-    <p>Todo Category</p>
-    <p>Todo Status</p>
+    <strong>{{ todo.text }}</strong>
+    <p class="todo-cat">{{ todo.category }}</p>
+    <div>
+        <button class="btn text-info">
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn text-danger">
+            <i class="bi bi-x-lg"></i>
+          </button>
+    </div>
 </div>

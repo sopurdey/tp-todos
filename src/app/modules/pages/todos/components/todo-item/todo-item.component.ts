@@ -7,6 +7,8 @@ import { Todo } from 'src/app/modules/shared/models/todo';
   styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent implements OnInit {
+  @Input()
+  todo!: Todo;
 
   constructor() { }
 

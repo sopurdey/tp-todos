@@ -2,11 +2,8 @@ tr {
   vertical-align: middle;
 }
 
-.user-name:hover {
-  cursor: pointer;
-}
-
-.hiddenRow, .accordion-body {
+.hiddenRow,
+.accordion-body {
   padding: 0 !important;
 }
 
@@ -15,5 +12,13 @@ ul {
 }
 
 .todolists {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 15px;
   padding: 10px 30px;
+  text-align: start;
+}
+
+p.d-inline-block {
+ vertical-align: middle; 
 }
